@@ -1,0 +1,263 @@
+/*--------HEADER--------*/
+
+header{
+    height: fit-content;
+    border:#171c22;
+    background-color: #171c22;
+    font-family: "Acme", sans-serif;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+header article{
+    display: flex;
+    align-items: center;
+    height: 4vmax;
+    min-height: 36px;
+    background-color: #171c22;;
+    margin-left: 0;
+    margin-right: 0;
+}
+header img{
+    width: 6vmax;
+}
+
+
+header a{
+    text-decoration: none;
+}
+header .row{
+    padding-right: 0;
+}
+header font{
+    font-size: 2vmax;
+}
+header li{
+    font-size:  x-large;
+    list-style: none;
+    color: white;
+    transition: 0.2s ease;
+}
+#menu{
+    justify-content: end;
+}
+#menu a{
+    padding-left: 1vmax;
+}
+header.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+/* #in{
+    padding-right: 1%;
+    border-right: 0.5px white solid;
+}
+#up{
+    padding-left: 1%;
+    border-left: 0.5px white solid;
+} */
+#menu a:hover:not(#sell) li{
+    color: #6EC711;
+    transition: 0.2s ease;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+#titre{
+    margin-right: 5vmax;
+}
+header .btn{
+    --bs-btn-padding-x: 1vmax;
+}
+header .btn-custom{
+    background-color: #6EC711;
+    transition: 0.2s ease;
+}
+header .btn-custom:hover{
+    background-color: white;
+    transition: 0.2s ease;
+}
+header #btn:hover li{
+    color: black;
+    transition: 0.2s ease;
+}
+#btn{
+    height: fit-content;
+}
+#menu i{
+color: #6EC711;
+font-size: x-large;
+transition: 0.2s ease;
+}
+header .bi-bell{
+    padding-left: 1vmax;
+    border-left: white solid;
+    margin-left: 1vmax;
+}
+
+#sell div{
+    background-color: #6EC711;
+    padding: 0 10px;
+    border-radius: 100px; 
+    width: fit-content;
+    height: fit-content;
+    transition: 0.2s ease;
+}
+#sell li{
+    color:black;
+}
+#sell div:hover li{
+    color: #1F1F1F;
+    transition: 0.2s ease;
+}
+#sell div:hover{
+    background-color: white;
+}
+#menu i:hover{
+    color: white;
+    transition: 0.2s ease;
+}
+.noir{
+    height: 20px;
+    background-color: red;
+}
+
+header .btn-secondary{
+    --bs-btn-bg: transparent;
+    --bs-btn-color: #6EC711;
+    --bs-btn-active-bg: transparent !important;
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-bg: transparent !important;
+    border: #6EC711;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: fit-content;
+}
+header i{
+    font-size: x-large;
+
+}
+.dropdown-menu{
+    border: 0 solid;
+    --bs-dropdown-bg: #151515;
+}
+.dropdown-item{
+    color: white;
+    font-size: smaller;
+    transition: .2s ease;
+}
+.dropdown-item:hover{
+    background-color: #6EC711;
+    transition: .2s ease;
+}
+.dropdown-toggle::after {
+    content: none;
+}
+
+/* NOTIFICATIONS CLOCHES */ 
+
+header span {
+	background: rgb(255, 0, 0);
+	padding: 4px;
+	border-radius: 50%;
+	color: #fff;
+	vertical-align: top;
+    margin-left: -50px;
+    height: 11px;
+    width: 11px;
+    display: inline-block;
+}
+
+header span {
+	color:white;
+}
+
+.icon {
+	cursor: pointer;
+	line-height: 70px;
+    margin-left: 10px;
+}
+.icon img{
+	display: inline-block;
+	width: 25px;
+    color: #6EC711;
+    aspect-ratio: 1/1;
+}
+
+.logo {
+	flex: 1;
+	margin-left: 50px;
+	color: #eee;
+	font-size: 20px;
+}
+
+.notifi-box {
+	opacity: 0;
+    height: fit-content;
+	position: absolute;
+	top: 63px;
+	transition: 250ms ease;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #151515;
+    border-radius: 10px;
+    padding: 10px 0;
+}
+.notifi-item {
+	display: flex;
+	padding: 5px 5px;
+	cursor: pointer;
+    background-color: #151515;
+    height: fit-content;
+    transition: .2s ease;
+}
+.notifi-item:hover {
+	background-color: #6EC711;
+    transition: .2s ease;
+}
+.notifi-item:hover .text h4{
+    color: black;
+    transition: .2s ease;
+}
+.notifi-item #imag{
+    background-size: cover;
+    background-position: center;
+    width: 60px;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+/* .notifi-item img {
+	display: block;
+	width: 70px;
+	margin-right: 10px;
+	border-radius: 2%;
+} */
+.notifi-item .text h4 {
+	color: rgb(255, 255, 255);
+	font-size: 16px;
+    transition: .2s ease;
+}
+.notifi-item .text p {
+	color: #aaa;
+	font-size: 12px;
+}
+.notifi-item:hover p{
+    color: #1F1F1F;
+}
+
+div#bell{
+    position: relative;
+}
+div#containRedCircle{
+    position: absolute;
+    right: -170%;
+    top: 30%;
+}
+
+@media screen and (max-width:568px){
+    .notifi-box{
+        top: 80px;
+        width: 100%;
+    }
+}

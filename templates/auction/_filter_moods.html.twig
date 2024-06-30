@@ -1,0 +1,25 @@
+{{ form_start(form, { 'attr': {'id': 'filters_moods'} }) }}
+    {#{{ form_label(form.moods, 'Moods') }}#}
+    {{ form_widget(form.moods) }}
+                                    {#
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="powerful">
+                                        <label class="form-check-label" for="powerful">
+                                            Powerful
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="depressed">
+                                        <label class="form-check-label" for="depressed">
+                                            Depressed
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="crazy">
+                                        <label class="form-check-label" for="crazy">
+                                            Crazy
+                                        </label>
+                                    </div>
+                                    <!-- <a href="#">afficher plus</a> -->
+                                    #}
+{{ form_end(form) }}

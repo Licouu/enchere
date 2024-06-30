@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My Auctions{% endblock %}
+{% block head %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/mes_encheres.css') }}" media="screen">
+        <link rel="stylesheet" href="{{ asset('styles/accueil.css') }}" media="screen">
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+{% include "header.html.twig" %}
+
+    <body>
+    <main>
+        <section><h1>My beats sales</h1></section>
+        <section id='sec_no_marg'>
+            <div class="row row-cols-3 row-cols-sm-6" id="auction_content">
+            {% for auction in auctionBeatmaker %}
+                <div class="card swiper-slide cardswiper-slide">
+                        <div class="flex">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <img src="{{ asset(auction.beat.imagePath) }}" alt="imageBeat" class="card-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flexx">
+                            <div class="card-content">
+                                <h2 class="name">{{auction.beat.name}}</h2>
+                                <p class="description">@{{auction.beatmaker.username}} </p>
+                                <p class="description">{{auction.maxPrice}} € </p>
+                                {% if auction.endDate > date('now') %}
+                                <button class="button btn btn-primary" onclick="location.href='https://192.168.14.229/'+'{{ path('app_offer', {id : auction.id}) }}'" >See </button>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+            {%endfor%}
+           </div> 
+        </section>
+        <section><h1>My current auctions</h1></section>
+        <section id='sec_no_marg'>
+            <div class="row row-cols-3 row-cols-sm-6" id="auction_content">
+            {% for offer in currentOffers %}
+                <div class="card swiper-slide cardswiper-slide">
+                        <div class="flex">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <img src="{{ asset(offer.auction.beat.imagePath) }}" alt="imageBeat" class="card-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flexx">
+                            <div class="card-content">
+                                <h2 class="name">{{offer.auction.beat.name}}</h2>
+                                <p class="description">@{{offer.auction.beatmaker.username}} </p>
+                                <button class="button btn btn-primary" onclick="location.href='https://192.168.14.229/'+'{{ path('app_offer', {id : offer.auction.id}) }}'" >See </button>
+                            </div>
+                        </div>
+                    </div>
+            {%endfor%}
+           </div> 
+        </section>
+        <section><h1>My won auctions</h1></section>
+        <section id='sec_no_marg'>
+            <div class="row row-cols-3 row-cols-sm-6" id="auction_content">
+            {% for auction in auctionWin %}
+                <div class="card swiper-slide cardswiper-slide">
+                        <div class="flex">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <img src="{{ asset(auction.beat.imagePath) }}" alt="imageBeat" class="card-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flexx">
+                            <div class="card-content">
+                                <h2 class="name">{{auction.beat.name}}</h2>
+                                <p class="description">@{{auction.beatmaker.username}} </p>
+                                <p class="description">{{auction.maxPrice}} € </p>
+                                <button class="button btn btn-primary" onclick="location.href='https://192.168.14.229/'+'{{ path('app_offer', {id : auction.id}) }}'" >Recover beat</button>
+                            </div>
+                        </div>
+                    </div>
+            {%endfor%}
+           </div> 
+        </section>
+    </main>
+
+{% include "footer.html.twig" %}
+{% endblock %}
+{% block script%}
+    <script src="js/notifications.js"></script>
+{% endblock %}
+
+
+
+

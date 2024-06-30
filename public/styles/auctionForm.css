@@ -1,0 +1,165 @@
+body{
+    margin: 0;
+    font-family: "Acme", sans-serif;
+    background-color: black;
+}
+
+/*--------HEADER--------*/
+header{
+    height: fit-content;
+    border: black solid;
+    background-color: #1F1F1F;
+    font-family: "Acme", sans-serif;
+    position: fixed;
+    top: 0;
+}
+header article{
+    display: flex;
+    align-items: center;
+    height: 4vmax;
+    min-height: 36px;
+    background-color: black;
+    margin-left: 0;
+    margin-right: 0;
+}
+header img{
+    width: 6vmax;
+}
+
+header a{
+    text-decoration: none;
+}
+header .row{
+    padding-right: 0;
+}
+header font{
+    font-size: 2vmax;
+}
+header li{
+    font-size:  x-large;
+    list-style: none;
+    color: white;
+    transition: 0.2s ease;
+}
+#menu{
+    justify-content: end;
+}
+#menu a{
+    padding-left: 1vmax;
+}
+header.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+/* #in{
+    padding-right: 1%;
+    border-right: 0.5px white solid;
+}
+#up{
+    padding-left: 1%;
+    border-left: 0.5px white solid;
+} */
+#menu a:hover:not(#sell) li{
+    color: #6EC711;
+    transition: 0.2s ease;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+#titre{
+    margin-right: 5vmax;
+}
+header .btn{
+    --bs-btn-padding-x: 1vmax;
+}
+header .btn-custom{
+    background-color: #6EC711;
+    transition: 0.2s ease;
+}
+header .btn-custom:hover{
+    background-color: white;
+    transition: 0.2s ease;
+}
+header #btn:hover li{
+    color: black;
+    transition: 0.2s ease;
+}
+#btn{
+    height: fit-content;
+}
+#menu a i{
+color: #6EC711;
+font-size: x-large;
+transition: 0.2s ease;
+}
+.bi-person-circle{
+    padding-left: 1vmax;
+    border-left: white solid;
+}
+
+#sell div{
+    background-color: #6EC711;
+    padding: 0 10px;
+    border-radius: 100px; 
+    width: fit-content;
+    height: fit-content;
+    transition: 0.2s ease;
+}
+#sell li{
+    color:black;
+}
+#sell div:hover li{
+    color: #6EC711;
+    transition: 0.2s ease;
+}
+#sell div:hover{
+    background-color: #333333;
+}
+#menu a i:hover{
+    color: #333333;
+    transition: 0.2s ease;
+}
+.noir{
+    height: 20px;
+    background-color: black;
+}
+
+/** MAIN**/
+
+
+#flex{
+    display: flex;
+    margin: 10%;
+    flex-direction: column;
+    color: white;
+    border:  1px solid;
+    border-color: white;
+    padding: 15px;
+}
+
+main .btn{
+    margin: auto ;
+    color: #6EC711;
+    border-color: white;
+}
+main .btn:hover{
+    border-color: white;
+}
+
+#vente{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+#center{
+    display: flex;
+    justify-content: center;
+    margin-left: 135px;
+    margin-bottom: 10px;
+}
+
+label{
+    margin-right: 5px;
+}

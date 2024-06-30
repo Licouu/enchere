@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+  {% block head %}
+    {% block stylesheets %}
+      <link rel="stylesheet" href="{{ asset('styles/inscription.css') }}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    {%endblock%}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {%endblock%}
+
+  {% block title%}
+    Login
+  {% endblock %}
+    {#<meta charset="UTF-8">#}
+    
+     
+
+  {% block body %}
+    <div class="container">
+
+     <input type="checkbox" id="flip">
+      <div class="cover">
+      
+        <div class="back">
+          <img class="backImg" src="../assets/images/damso.jpg" alt="">
+          <div class="text">
+            <span class="text-1">{{ 'Instrumenthol' }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">{{ 'Login' }}</div>
+            <form method="post">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  {#<i class="fas fa-envelope"></i>
+                  <input type="text" placeholder="{{ 'Enter your email' }}" value={{ last_username }}>#}
+                  <input type="text" placeholder="{{ 'Enter your username' }}" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus style="color : white">
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-lock"></i>
+                  {#<i class="fas fa-lock"></i>
+                  <input type="password" placeholder="{{ 'Enter your password' }}" required>#}
+                  <input type="password" placeholder="{{ 'Enter your password' }}" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                </div>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+               
+                <div class="button input-box">
+                  <input type="submit" value="{{'Submit'}}">
+                </div>
+                
+                <div class="text sign-up-text" style= "color : white">{{ 'Don\'t have an account?' }} 
+                <label for="flip" style="color: green"> <a href="{{path('app_register')}}"> {{ 'Signup now' }}  </a> </label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="signup-form">
+            <div class="title">{{ 'Signup' }}
+          {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+          {% endif %}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    {% endblock %}
+    {% block script%}
+    <script src="/js/login.js"></script>
+{% endblock %}
+

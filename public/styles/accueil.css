@@ -1,0 +1,359 @@
+/* rerzr*/ 
+body{
+  margin: 0;
+  font-family: "Acme", sans-serif;
+  background-color: black ;
+}
+
+ul{
+  padding-right: 5%;
+}
+.AA h1{
+  color: white !important;
+}
+li{
+  list-style: none;
+}
+.swiper-pagination{
+  display: none;
+}
+.btn-primary{
+
+    --bs-btn-color: #171C22 !important;
+    --bs-btn-bg: #6EC711 !important;
+    --bs-btn-border-color: #1AAE0A !important;
+    --bs-btn-hover-color: #1f1f1f !important;
+    --bs-btn-hover-bg: #1AAE0A !important;
+    --bs-btn-hover-border-color: #158708 !important;
+    --bs-btn-focus-shadow-rgb: 60,153,110 !important;
+    --bs-btn-active-color: #171C22 !important;
+    --bs-btn-active-bg: #158708 !important;
+    --bs-btn-active-border-color: #13653f !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+}
+/*--------Bannière--------*/
+/*
+ #tetete, #hero, .hero container {
+  background-image: url('assets/images/guitare.jpg'); 
+  background-size: cover;
+  background-position: top center;
+} 
+*/
+
+#hero {
+  background-image: url("/../assets/images/banniere.gif");
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  height:  550px;
+}
+
+
+/*--------CAROUSEL--------*/
+
+.imgItem{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(3px);
+}
+
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+ /* background-color: rgba(69, 69, 69, 0.5); */
+}
+
+.text-overlay h1 {
+  font-size: 1.5em;
+  color: white;
+  /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);*/
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.item {
+    aspect-ratio: 1/1;
+    transition: transform .1s;
+    position: relative;
+    border-radius: 15px;
+}
+.item{
+    background-color: #171c22;
+    transition:  .2s ease;
+}
+.item:hover{
+  background-color: #27303a;
+  transition: .2s ease;
+}
+
+a{
+  text-decoration: none;
+}
+
+.container{
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+
+
+#hero::after{
+  content:"";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: .6;
+  z-index: -1;
+}
+
+.owl-theme{
+  display: none;
+}
+
+#hero .cta {
+  display: inline-block;
+  padding: 10px 30px;
+  color: #171c22;
+  background-color: transparent;
+  border: 2px solid #6ec711;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  margin-top: 200px;
+  transition: .3s ease ;
+ border-radius: 10px;
+  text-align: center;
+  background-color: #6ec711;
+  text-decoration: none;
+}
+
+#hero .cta:hover{
+color: white;
+background-color: transparent;
+}
+
+/* Partit qui bouge juste en dessous de la photo */
+/* Partit en dessou du premier slider */
+
+#AA ,h1{
+  color: white;
+  text-align: center;
+  font-size: 50px;
+}
+
+/* make a zoom effect on the next current card with a nice transition*/
+
+.swiper-slide-next .card-image .card-img, .swiper-slide-next .overlay, .swiper-slide-next .overlay::before, .swiper-slide-next .overlay::after, .swiper-slide-next .name, .swiper-slide-next .description, .swiper-slide-next .button, .swiper-slide-next .swiper-navBtn, .swiper-slide-next .swiper-pagination-bullet, .swiper-slide-next .swiper-pagination-bullet-active, .swiper-slide-next .swiper-pagination-bullet-active::before, .swiper-slide-next .swiper-pagination-bullet-active::after{
+  transform: scale(1.2);
+  transition: all 0.6s ease;
+}
+
+:root {
+  --swiper-theme-color: white !important;
+}
+
+#encheres{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.slide-container{
+  max-width: 1120px;
+  width: 100%;
+  padding: 40px 0;
+}
+.slide-content{
+  margin: 0 40px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+.card{
+  border-radius: 25px;
+  --bs-card-bg: transparent !important;
+  --bs-card-border-width: 0 !important;
+}
+
+.image-content,
+.card-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 14px;
+  background-color: #171c22;
+  width: 200px;
+  
+}
+.image-content{
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background-color: #000000;
+  border-radius: 25px 25px 0 25px;
+}
+
+.overlay::before,
+.overlay::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #000000;
+}
+.overlay::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+.card-image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background: #202020;
+  padding: 3px;
+}
+
+.card-image .card-img{
+  height: 100%;
+  width: 100%;
+}
+.name{
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+}
+.description{
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.swiper-navBtn{
+  color: #c3c3c3;
+  transition: color 0.3s ease;
+}
+.swiper-navBtn:hover{
+  color: white;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+  font-size: 35px;
+}
+.swiper-button-next{
+  right: 0;
+}
+.swiper-button-prev{
+  left: 0;
+}
+.swiper-pagination-bullet{
+  background-color: #6EC711;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active{
+  background-color: #158708;
+}
+
+@media screen and (max-width: 768px) {
+  .slide-content{
+    margin: 0 10px;
+  }
+  .swiper-navBtn{
+    display: none;
+  }
+}
+
+
+/* Fin */
+
+#bannum {
+  height: 400px;
+  background-image: url("/assets/images/piano.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  backdrop-filter : 10px;
+  margin-top: 70px;
+}
+
+#bannum h1{
+  text-align: center;
+  padding-top: 100px;
+  font-size: 40px;
+  color: white;
+}
+
+/* 2 trucs */
+
+.valaba {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.valaba div {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 23px
+}
+
+
+#a{
+  background-color: green;
+}
+
+#a h2{
+  color: black;
+
+}
+
+#aie h2{
+  color: green;
+
+}
+
+
+
+.flex, .flexx{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.image-content{
+  border-radius: 15px 15px 0 0;
+}
+.card-content{
+  border-radius: 0 0 15px 15px;
+}
+
+

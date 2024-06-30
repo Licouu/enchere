@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offer{% endblock %}
+{% block head %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/gagne.css') }}" media="screen">
+    {% endblock %}
+{% endblock %}
+{% block body %}
+
+    <main>
+
+
+        {% if winner %}
+            <div id="congrats">
+            <h1>Congrats, you won the bid !</h1>
+            </div>
+        {% elseif finDeLenchere %}
+            <div id="congrats">
+            <h1>Enchere Terminée</h1>
+            </div>
+        {% endif %}
+        <div class="container">
+            <div class="row">
+                <section class="col col-1 nul"></section>
+                <section class="col col-12 col-lg-4 tracks container-fluid">
+                    <div id="image">
+                        <div>
+                            
+                        </div>
+                        <i class="bi bi-play-circle"></i>
+                    </div>
+
+                    <div>
+                        <h1>Title</h1>
+                        <li>@Pseudo</li>
+                        <hr>
+                        <div><li><i class="bi bi-headphones"></i> Pop</li></div>
+                        <li><i class="bi bi-music-note-beamed"></i> Piano/Voice/guitar</li>
+                        <li><i class="bi bi-emoji-smile"></i> Powerful</li>
+                        <li><i class="bi bi-activity"></i> 165 bpm</li>
+                        <li><i class="bi bi-clock"></i> 03:42 m</li>
+                    </div>
+                    
+                </section>
+
+                <section class="col col-12 col-lg-7 bid">
+                    <!-- <h1>Congrats, you won the bid !</h1> -->
+                    <h2>Time left to pay</h2>
+                    <div><h3>4 days, 10 hours, 10 minutes</h3></div>
+                    <h2>Price to pay</h2>
+                    <form class="mb-3">
+                        <div><h3>100€</h3></div>
+                        <button type="button" class="btn btn-success">Bid</button>
+                    </form>
+                        <button type="button" class="btn btn-success" disabled>Download</button>
+
+                </section>
+            </div>
+        </div>
+    </main>
+ </body>
+ 
+{% include "footer.html.twig" %}
+{% endblock %}
+

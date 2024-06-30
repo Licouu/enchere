@@ -1,0 +1,333 @@
+body{
+    margin: 0;
+    background-color: black !important;
+    height: 100vh;
+}
+
+
+/* conditions */
+
+
+#congrats {
+    border-color: 1px solid #6EC711;
+}
+
+#looser, #finDeLenchere {
+    border-color: 1px solid red;
+}
+
+
+
+
+
+
+
+/*           enchères              */
+
+
+main{
+    padding: 2%;
+}
+
+
+/* tracks*/
+
+.tracks{
+    display: flex;
+}
+main section{
+    background-color: #1f1f1f !important;
+    border-radius: 10px;
+    margin-top: 6vh !important;
+    
+}
+.tracks a{
+    text-decoration: none;
+    list-style: none;
+}
+.tracks h1{
+    overflow-y: hidden;
+    color: #6EC711;
+    padding-bottom: 5px;
+}
+#image img{
+    height: 100% !important;
+    width: auto !important;
+}
+#image div{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    transition: .3s ease;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+hr{
+    color: #6EC711 !important;
+}
+#image{
+    position: relative;
+    padding: 15px;
+}
+#image i{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    opacity: 0;
+    transition: .3s ease;
+    font-size: 400%;
+}
+.tracks li{
+    list-style: none;
+    color: white;
+    font-size: 1.5vmax;
+}
+#tracks article i{
+    color: #6EC711;
+    font-size: xx-large;
+}
+
+#image:hover i{
+    color: #6EC711;
+    opacity: 1;
+    transition: .3s ease;
+    cursor: pointer;
+}
+#image:hover div{
+    filter: blur(2px);
+    transition: .3s ease;
+}
+
+
+
+
+
+
+
+
+.bid.form-control{
+    width: 40% !important;
+}
+
+.bid h1{
+    justify-content: center;
+}
+.bid h2, .bid h3, .bid h1{
+    color: white;
+    margin-bottom: 0;
+}
+.bid h2{
+    margin-top: 15px;
+}
+.bid div{
+    background-color: #505050;
+    padding: 1vw 2vw;
+    margin-top: 15px;
+    margin-left: 10px;
+    border-radius: 10px;
+    width: fit-content;
+}
+main input[type="number"]{
+    width: 40%;
+    /* background-color: #1f1f1f; */
+    border: 0;
+    border-radius: 10px;
+    font-size: x-large;
+    margin-right: 5%;
+}
+.mb-3{
+    display: flex;
+    margin-bottom: 0;
+}
+button{
+    width: fit-content;
+    /*min-width: 100px;*/
+}
+button h3{
+    color: black;
+    font-size: medium;
+    transition: color .15s ease-in-out;
+}
+button:hover h3{
+    color: #1f1f1f;
+    transition: color .15s ease-in-out;
+}
+.bid form{
+    margin-top: 15px;
+    margin-left: 10px;
+}
+.bid a{
+    font-style: italic;
+}
+.bid li{
+    list-style: none;
+    font-size: smaller;
+    margin-left: 10px;
+    margin-top: 0;
+    color: #6EC711;
+}
+.btn-success{
+    --bs-btn-color: #151515 !important;
+    --bs-btn-bg: #6EC711 !important;
+    --bs-btn-border-color: #1AAE0A !important;
+    --bs-btn-hover-color: #1f1f1f !important;
+    --bs-btn-hover-bg: #1AAE0A !important;
+    --bs-btn-hover-border-color: #158708 !important;
+    --bs-btn-focus-shadow-rgb: 60,153,110 !important;
+    --bs-btn-active-color: black !important;
+    --bs-btn-active-bg: #158708 !important;
+    --bs-btn-active-border-color: #13653f !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+}
+
+
+
+
+.confirm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    box-sizing: border-box;
+
+    opacity: 0;
+    animation-name: confirm---open;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm--close {
+    animation-name: confirm---close;
+}
+
+.confirm__window {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    font-size: 14px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    opacity: 0;
+    transform: scale(0.75);
+    animation-name: confirm__window---open;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
+}
+
+.confirm__titlebar,
+.confirm__content,
+.confirm__buttons {
+    padding: 1.25em;
+}
+
+.confirm__titlebar {
+    background: #222222;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.confirm__title {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.confirm__close {
+    background: none;
+    outline: none;
+    border: none;
+    transform: scale(2.5);
+    color: #ffffff;
+    transition: color 0.15s;
+}
+
+.confirm__close:hover {
+    color: #ff0000;
+    cursor: pointer;
+}
+
+.confirm__content {
+    line-height: 1.8em;
+}
+
+.confirm__buttons {
+    background: #eeeeee;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.confirm__button {
+    padding: 0.4em 0.8em;
+    border: 2px solid white;
+    border-radius: 5px;
+    background: rgb(92, 0, 0);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-left: 0.6em;
+    cursor: pointer;
+    outline: none;
+}
+
+.confirm__button--fill {
+    background: #6EC711;
+    color: #ffffff;
+}
+
+.confirm__button:focus {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes confirm---open {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
+
+@keyframes confirm---close {
+    from { opacity: 1 }
+    to { opacity: 0 }
+}
+
+@keyframes confirm__window---open {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.nul{
+    display: none;
+}
+
+@media screen and (min-width:1024px){
+    
+    #image{
+        width: 100%;
+    }
+    .tracks{
+        max-width: 300px;
+        display: block !important;
+    }
+}
+
+#btnChangeBg{
+    visibility: hidden;
+}
+
+#bid{
+    display: flex;
+    flex-wrap: nowrap;
+}
+

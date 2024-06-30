@@ -1,0 +1,28 @@
+        {% for auction in auctions %}
+            <div class="col" >
+                    <div id="image" class="playListPlay">
+                        <div >
+                            <img src="{{ asset(auction.beat.imagePath) }}" alt="beatImage">
+                        </div>
+                        <i class="bi bi-play-circle" id="{{ asset(auction.beat.musicPath) }}"></i>
+                    </div>
+                <a href="{{ path('app_offer', {id : auction.id}) }}">
+                    <article class="container-fluid">
+                        <h4>{{ auction.beat.name }}</h4>
+                        <section>
+                            <li> @{{ auction.beatmaker.username }}</li>
+                            {% if auction.nbDaysLeft.format('%D') == '0' %}
+                            <li>Time left: {{ auction.nbDaysLeft.format('%Dj %Hh %Im %Ss')}}</li>
+                            {% else %}
+                            <li>Time left: {{ auction.nbDaysLeft.format('%Dj')}}</li>
+                            {% endif %}
+                        </section>
+                    </article>
+                </a>
+            </div>
+        {% endfor %}
+        {#  
+{% block javascripts %}
+    <script src="{{ asset('js/masterPlay.js') }}"></script>
+{% endblock %}
+#}

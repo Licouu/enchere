@@ -1,0 +1,230 @@
+
+
+ /*     masterPlay     */
+
+.master_play {
+    width: 100%;
+    height: fit-content;
+    background: #101010;
+    position: fixed;
+    flex-wrap: wrap;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    border-top: .5px #6EC711 solid;
+    visibility: hidden;
+}
+.master_play .wave{
+    width: 6%;
+    height: 30px;
+    /* border: 1px solid #fff; */
+    padding-bottom: 5px;
+    display: flex;
+    align-items: flex-end;
+}
+.master_play .wave .wave1{
+    width: 3px;
+    height: 10px;
+    margin-right: 3px ;
+    border-radius: 10px 10px 0px 0px ;
+    background: #6EC711;
+    animation: unset;
+}
+main .master_play .wave .wave1:nth-child(2){
+    height: 13px;
+    /* animation-delay: .4s; */
+}
+main .master_play .wave .wave1:nth-child(3){
+    height: 8px;
+    /* animation-delay: .8s; */
+}
+/* javascript class wave  */
+main .master_play .active2 .wave1{
+    animation: wave .5s linear infinite;
+}
+main .master_play .active2 .wave1:nth-child(2){
+    animation-delay: .4s;
+}
+main .master_play .active2 .wave1:nth-child(3){
+    animation-delay: .8s;
+}
+
+@keyframes wave {
+    0%{
+        height: 10px;
+    }
+    50%{
+        height: 15px;
+    }
+    100%{
+        height: 10px;
+    }
+}
+
+
+.master_play img {
+    width: 4vw;
+    height: 4vw;
+    object-fit: cover;
+}
+.master_play h5 {
+    width: 40%;
+    font-size: 13px;
+    margin-left: 15px;
+    color: #fff;
+    line-height: 17px;
+}
+.master_play h5 .subtitle{
+   font-size: 11px;
+   color: #4A6D4B;
+}
+.master_play .icon{
+   font-size: 20px;
+   width: fit-content;
+   color: #fff;
+   outline: none;
+}
+.master_play .icon .bi{
+ cursor: pointer;
+ outline: none;
+}
+.master_play .icon .bi:nth-child(2){
+border: 1px solid rgb(105, 105, 170,.1);
+border-radius: 50%;
+padding: 1px 4px 0px 6px;
+margin: 0px 5px;
+transition: .3s linear;
+}
+
+.master_play span {
+    color: #fff;
+    /* width: 32px; */
+    width: 6%;
+    font-size: 11px;
+    font-weight: 400;
+}
+.first{
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+.second{
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+.master_play .bar {
+    position: relative;
+    /* width: 43%; */
+    width: 75%;
+    height: 2px;
+    background: rgb(105, 105, 170,.1);
+    margin: 0px 15px 0px 10px;
+}
+.master_play .bar .bar2{
+   position: absolute;
+   background: #6EC711;
+   width: 0%;
+   height: 100%;
+   top: 0;
+   transition: 1s linear;
+}
+.master_play .bar .dot{
+   position: absolute;
+   width: 5px;
+   height: 5px;
+   background: #6EC711;
+   border-radius: 50%;
+   left: 0%;
+   top: -1px;
+   transition: 1s linear;
+}
+.master_play .bar .dot::before{
+    content: '';
+   position: absolute;
+   width: 15px;
+   height: 15px;
+   border:1px solid #6EC711;
+   border-radius: 50%;
+   left: -6px;
+   top: -6px;
+  box-shadow: inset 0px 0px 3px #6EC711;
+}
+.master_play .bar input{
+   position: absolute;
+   width: 100%;
+   top: -6px;
+   left: 0;
+   cursor: pointer;
+   z-index: 99999999;
+   transition: 3s linear;
+   opacity: 0;
+}
+.master_play .vol{
+  position: relative;
+  /* width: 100px; */
+  width: 13%;
+  height: 2px;
+  margin-left: 50px;
+ background: rgb(105, 105, 170,.1); 
+}
+.master_play .vol .bi{
+position: absolute;
+color: #fff;
+font-size: 25px;
+top: -17px;
+left: -30px;
+}
+.master_play .vol input{
+    position: absolute;
+    width: 100%;
+    top: -10px;
+    left: 0;
+    cursor: pointer;
+    z-index: 99999999;
+    transition: 3s linear;
+    opacity: 0;
+ }
+
+ .master_play .vol .vol_bar{
+    position: absolute;
+    background: #6EC711;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    transition: 1s linear;
+ }
+ .master_play .vol .dot{
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #6EC711;
+    border-radius: 50%;
+    left: 0%;
+    top: -1px;
+    transition: 1s linear;
+ }
+ .master_play .vol .dot::before{
+     content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border:1px solid #6EC711;
+    border-radius: 50%;
+    left: -6px;
+    top: -6px;
+   box-shadow: inset 0px 0px 3px #6EC711;
+ }
+ @media screen and (max-width:768px){
+    .first, .second{
+        width: 100%;
+    }
+    .master_play img {
+        width: 8vw;
+        height: 8vw;
+        object-fit: cover;
+    }
+ }

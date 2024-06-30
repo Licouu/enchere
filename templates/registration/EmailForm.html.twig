@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+                        <h3><i class="bi bi-envelope"></i>  Change email address</h3>
+                        <p>New address</p>
+                        <div>
+                            {{ form_widget(form.email1, { 'attr': {'id': 'inputEmail1'} }) }}
+                            {#<input type="email" class="form-control" id="inputPassword2" placeholder="Email">#}
+                        </div>
+                        <p>Confirm with your password</p>
+                        <div>
+                            {{ form_widget(form.email2, { 'attr': {'id': 'inputEmail2'} }) }}
+                            {#<input type="password" class="form-control" id="inputPassword2" placeholder="Email">#}
+                        </div>
+                        <div>
+                            {{ form_widget(form.submit) }}
+                            {#<button class="btn btn-primary" type="submit">Send link</button>#}
+                        </div>
+                        <li>A link has been send to this email !</li>
+{{ form_end(form) }}

@@ -1,0 +1,416 @@
+
+body{
+  margin: 0;
+  font-family: "Acme", sans-serif;
+  background-color: black;
+}
+
+/*--------HEADER--------*/
+header{
+  height: fit-content;
+  border: black solid;
+}
+header article{
+  display: flex;
+  align-items: center;
+  height: 4vmax;
+}
+header img{
+  width: 6vmax;
+}
+header a{
+  text-decoration: none;
+}
+header .row{
+  padding-right: 0;
+}
+header font{
+  font-size: 2vmax;
+}
+header li{
+  font-size:  x-large;
+  list-style: none;
+  color: white;
+  transition: 0.2s ease;
+}
+#menu{
+  justify-content: end;
+}
+#menu a{
+  padding-left: 1vmax;
+}
+ #in{
+  padding-right: 1%;
+  border-right: 0.5px white solid;
+}
+#up{
+  padding-left: 1%;
+  border-left: 0.5px white solid;
+} 
+#menu a:hover:not(#sell) li{
+  color: #6EC711;
+  transition: 0.2s ease;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+#titre{
+  margin-right: 5vmax;
+}
+header .btn{
+  --bs-btn-padding-x: 1vmax;
+}
+header .btn-custom{
+  background-color: #6EC711;
+  transition: 0.2s ease;
+}
+header .btn-custom:hover{
+  background-color: white;
+  transition: 0.2s ease;
+}
+header #btn:hover li{
+  color: black;
+  transition: 0.2s ease;
+}
+#btn{
+  height: fit-content;
+}
+#menu a i{
+color: #6EC711;
+font-size: x-large;
+transition: 0.2s ease;
+}
+.bi-person-circle{
+  padding-left: 1vmax;
+  border-left: black solid;
+}
+
+#sell div{
+  background-color: #6EC711;
+  padding: 0 10px;
+  border-radius: 100px;
+  transition: 0.2s ease;
+}
+#sell li{
+  color:black;
+}
+#sell div:hover li{
+  color: #6EC711;
+  transition: 0.2s ease;
+}
+#sell div:hover{
+  background-color: #333333;
+}
+#menu a i:hover{
+  color: #333333;
+  transition: 0.2s ease;
+}
+
+
+
+
+
+
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+a{
+  text-decoration: none;
+}
+
+.container{
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+#hero {
+  background-image: url("meta_eyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ.webp");
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  z-index: 1;
+  height:  550px;
+}
+
+#hero::after{
+  content:"";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: .6;
+  z-index: -1;
+}
+
+
+
+#hero .cta {
+  display: inline-block;
+  padding: 10px 30px;
+  color: white;
+  background-color: transparent;
+  border: 2px solid green;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  margin-top: 200px;
+  transition: .3s ease ;
+ 
+  text-align: center;
+  background-color: green;
+  text-decoration: none;
+}
+
+#hero .cta:hover{
+color: white;
+background-color: transparent;
+}
+
+/* Partit qui bouge juste en dessous de la photo */
+/* Partit en dessou du premier slider */
+
+#AA ,h1{
+  color: white;
+  text-align: center;
+  font-size: 50px;
+}
+
+
+
+
+
+
+.slide-container{
+  max-width: 1120px;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.slide-content{
+  margin: 0 40px;
+  overflow: hidden;
+
+}
+
+.image-content,
+.card-content{
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+background-color: #232422;
+color: white;
+text-align: left;
+
+}
+
+.image-content{
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+  align-items: center;
+}
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.card-image{
+  position: relative;
+  height: 250px;
+  width: 290px;
+  padding: 5px;
+
+}
+
+   
+
+.card-image .card-img{
+  height: 100%;
+  width: 103%;
+  object-fit: cover;
+  
+}
+
+
+.overlay::before,
+.overlay::after{
+  content: '';
+  position: absolute;
+  right: 11px;
+  bottom: 0px;
+  height: 30px;
+  width: 50px;
+  background-color: green;
+}
+
+section{
+  padding-top: 10px;
+  padding-bottom: 80px;
+}
+
+
+.swiper-navBtn{
+  margin-left: -13px;
+  margin-right: -13px ;
+  color: azure;
+}
+
+
+
+
+
+
+
+
+#bannum {
+  background-color: black;
+  height: 400px;
+  
+
+
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+url("meta_eyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ.webp");
+
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+ 
+ 
+}
+
+
+
+
+#bannum h1{
+  text-align: center;
+  padding-top: 100px;
+  font-size: 40px;
+}
+
+
+.valaba {
+  color: white;
+  display: flex;
+  justify-content: center;
+  
+
+}
+
+.valaba div {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 23px
+
+}
+
+
+#a{
+  background-color: green;
+}
+
+#a h2{
+  color: black;
+  
+}
+
+#aie h2{
+  color: green;
+
+}
+
+
+
+
+
+  
+  .footer{
+  background:rgb(36, 36, 36);
+  padding:30px 0px;
+  margin:0;
+  overflow-x:hidden;
+  text-align:center;
+  }
+  
+  .footer .row{
+  width:100%;
+  margin:1% 0%;
+  padding:0.6% 0%;
+  color:gray;
+  font-size:0.8em;
+  }
+  
+  .footer .row a{
+  text-decoration:none;
+  color:gray;
+  transition:0.5s;
+  }
+  
+  .footer .row a:hover{
+  color:#fff;
+  }
+  
+  .footer .row ul{
+  width:100%;
+  }
+  
+  .footer .row ul li{
+  display:inline-block;
+  margin:0px 30px;
+  }
+  
+  .footer .row a i{
+  font-size:2em;
+  margin:0% 1%;
+  }
+  
+  @media (max-width:720px){
+  .footer{
+  text-align:left;
+  padding:5%;
+  }
+  .footer .row ul li{
+  display:block;
+  margin:10px 0px;
+  text-align:left;
+  }
+  .footer .row a i{
+  margin:0% 3%;
+  }
+  }
+
+  .row{
+    display: flex;
+    justify-content: center;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

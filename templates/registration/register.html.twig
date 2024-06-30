@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+{% block head %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/inscription.css') }}" media="screen">
+    {% endblock %}
+{% endblock %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+  <div class="container">
+    
+    <div class="cover">
+     
+      <div class="back">
+        <img class="backImg" src="../assets/images/damso.jpg" alt="">
+        <div class="text">
+          <span class="text-1">Instrumenthol</span>
+          <span class="text-2">Our web application is a marketplace for auctioning beats. Users can browse through a variety of styles and genres and place bids on the beats that interest them. They can also make an offer. With a simple and intuitive interface, it is easy to find the perfect beats for your music projects. Join our online community of music enthusiasts now and acquire unique beats. </span>
+        </div>
+      </div>
+    </div>
+    <div class="forms">
+        <div class="form-content">
+
+          <div class="login-form">
+            <div class="title">Sign Up</div>
+            {{ form_start(registrationForm, {'attr': {'id': 'a'}}) }}
+            <div class="input-boxes">
+
+              <div class="input-box" id="cettediv">
+                <i class="fas fa-user"></i>
+                {{form_widget(registrationForm.firstName, {'attr':{'id':"ligne1",'name':"ligne1",'placeholder':  "Name",'type': "text" , 'required' : "required"}})}}
+                {{ form_errors(registrationForm.firstName, {'attr':{'class':'msg_error'}})}}
+                <i class="fas fa-user"></i>
+                {{form_widget(registrationForm.lastName, {'attr':{'id':"ligne2",'name':"ligne2",'placeholder' :"Surname",'type': "text" , 'required' : "required" }})}}
+                {{ form_errors(registrationForm.lastName, {'attr':{'class':'msg_error'}})}}
+              </div>
+            </div>
+            <div class="error"></div>
+            <div class="input-box">
+              <i class="fas fa-user"></i>
+              {{form_widget(registrationForm.username,{'attr':{'id':"ame",'name':"ame",'placeholder':"Nickname",'type': "text", 'required' : "required"}})}}
+              {{ form_errors(registrationForm.username, {'attr':{'class':'msg_error'}})}}
+            </div>
+            <div class="error"></div>
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                {{form_widget(registrationForm.email,{'attr':{'id':"email",'name':"email",'type': "email", 'placeholder': "Enter your email", 'required' : "required"}})}}
+                {{ form_errors(registrationForm.email, {'attr':{'class':'msg_error'}})}}
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                {{form_widget(registrationForm.password,{'attr':{'id':"password",'name':"password",'type': "password", 'placeholder': "password", 'required' : "required" }})}}
+              </div>
+              <div>
+                <label class="checkboxs" style="color: white">
+                  {{form_widget(registrationForm.agreeTerms,{'attr':{'id':"registration_form_agreeTerms",'name':"cgu",'type': "checkbox", 'placeholder': "+18",'required' : "required"}})}}
+               I accept <a href="#popup" class="button" style="color: white"> CGU </a> and <a href="#fenetre" class="buton" style="color: white"> license </a>
+                </label>
+              </div>
+              <div>
+                <label class="checkboxs" style="color: white">
+                  <input type="checkbox" name="age" id="age" placeholder="+18" required >
+                  I have at least 18 years old.
+                </label>
+              </div>
+              <div class="button input-box">
+                <button type="submit" value="Submit">  Sign in </button>
+                {{ form_end(registrationForm) }}
+              </div>
+              <div class="text sign-up-text" style="color: white">Already have an account? <label for="flip" style="color: green"> <a href="{{path('app_login')}}"> Login now </a>
+              </label></div> 
+            </div>
+        </form>
+      </div>
+
+     </div>
+    </div>
+  </div>
+
+ {% include "cgu.html.twig" %}
+ {% include "licence.html.twig" %}
+
+
+{% endblock %}
+

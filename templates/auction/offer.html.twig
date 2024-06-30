@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offer{% endblock %}
+{% block head %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/enchere.css') }}" media="screen">
+    {% endblock %}
+{% endblock %}
+{% block body %}
+{% include "header.html.twig" %}
+<main>
+    <div class="container">
+        <div class="row">
+            <section class="col col-1 nul"></section>
+            <section class="col col-12 col-lg-4 tracks container-fluid">
+                <div id="image" class="playListPlay">
+                    <div >
+                    <img style="height:100px;width:100px;"src="{{ asset(auction.beat.imagePath) }}" alt="beatImage" >
+                    </div>
+                    <i class="bi bi-play-circle" id="{{ asset(auction.beat.musicPath) }}"></i>
+                </div>
+                <div id="beat_info">
+                    <h1>{{ auction.beat.name }}</h1>
+                    <li>@{{ auction.beatmaker.username }}</li>
+                    <hr>
+                    <div><li><i class="bi bi-headphones"></i>{{auction.beat.category.name}}</li></div>
+                    <li><i class="bi bi-emoji-smile"></i>{{auction.beat.mood.name}}</li>
+                    <li><i class="bi bi-clock duree_beat" id="{{ asset(auction.beat.musicPath) }}"></i></li>
+                </div>
+            </section>
+            <section class="col col-12 col-lg-7 bid">
+                
+
+            {% if winner and finDeLenchere %}
+                <div id="congrats">
+                <h1>Congrats, you won the bid !</h1>
+                </div>
+            {% elseif winner == false and finDeLenchere %}
+                <div id="looser">
+                <h1>Enchere Terminée</h1>
+                </div>
+            {% endif %}
+
+
+            {% if offer.isEliminated %}
+                 <div id="looser">
+                <h1>You're Eliminated</h1>
+                </div>
+            {% endif %}
+
+             {% if finDeLenchere %}
+             <div id="finDeLenchere">
+                <h1>The Auction is finish</h1>
+                </div>
+             {% else %}
+                <h2>Auction ends in:</h2>
+                <div>{% if auction.nbDaysLeft.format('%D') == '0' %}
+                        <h3> {{ auction.nbDaysLeft.format('%Hh %Im %Ss')}}</h3>
+                        {% else %}
+                        <h3> {{ auction.nbDaysLeft.format('%Dj %Hh %Im %Ss')}}</h3>
+                        {% endif %}</div>
+             {% endif %}
+                <h2>Your previous bid:</h2>
+                <div><h3>{%if offer.price==0 %}You never bid on this beat{% else %} {{offer.price}} € {% endif %}</h3></div>
+                <h2>Bid now !</h2>
+                {%if not offer.isEliminated and isBeatmaker == false %}
+                    <div id='bid'>
+                    {{form_start(offerForm, {'attr': {'class': "mb-3"}})}}
+                        {{form_widget(offerForm.price, {'attr':{'class': "form-control", 'id': "formGroupExampleInput", 'placeholder': "€" , 'name': "prix", 'min': auction.minPrice > offer.price ? auction.minPrice : offer.price+1 }})}}
+                        <button id="btnChangeBg" type="submit"></button>
+                    {{form_end(offerForm)}}
+                        <button id="btnChangeBgg"   class="btn btn-success">Bid</button>
+                    </div>
+                {% else %}
+                    <input type="number" disabled>
+                {% endif %}
+                <li>minimum price: {{auction.minPrice}}€</li>
+                <a href="{{path('app_faq')}}">Here is an explaination of the auction</a>
+            </section>
+        </div>
+        <br>
+    </div>
+</main>
+{% include "player.html.twig" %}
+{% block script %}
+    <script src="{{ asset('js/enchere.js') }}"></script>
+    <script src="{{ asset('js/masterPlay_offer.js') }}"></script>
+{% endblock %}
+{% endblock %}

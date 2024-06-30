@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offer{% endblock %}
+{% block head %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/enchere.css') }}" media="screen">
+    {% endblock %}
+{% endblock %}
+{% block body %}
+<main>
+    <div class="container">
+        <div class="row">
+            <section class="col col-1 nul"></section>
+            <section class="col col-12 col-lg-4 tracks container-fluid">
+                <div id="image">
+                    <div>
+                    <img style="height:100px;width:100px;"src="{{ asset(auction.beat.imagePath) }}" alt="beatImage">
+                    </div>
+                    <i class="bi bi-play-circle"></i>
+                </div>
+                <div>
+                    <h1>{{ auction.beat.name }}</h1>
+                    <li>@{{ auction.beatmaker.username }}</li>
+                    <hr>
+                    <div><li><i class="bi bi-headphones"></i>{{auction.beat.category.name}}</li></div>
+                    <li><i class="bi bi-music-note-beamed"></i> Piano/Voice/guitar</li>
+                    <li><i class="bi bi-emoji-smile"></i>{{auction.beat.mood}}</li>
+                    <li><i class="bi bi-activity"></i> 165 bpm</li>
+                    <li><i class="bi bi-clock"></i> 03:42 m</li>
+                </div>
+            </section>
+            <section class="col col-12 col-lg-7 bid">
+                <h2>Auction ends in:</h2>
+                <div><h3>4 days, 10 hours, 10 minutes</h3></div>
+                <h2>Your previous bid loses:</h2>
+                <div><h3>100€</h3></div>
+                <h2>Bid now !</h2>
+                {{form_start(offerForm, {'attr': {'class': "mb-3"}})}}
+                    {{form_widget(offerForm.price, {'attr':{'class': "form-control", 'id': "formGroupExampleInput", 'placeholder': "€"}})}}
+                    <button type="submit" class="btn btn-success">Bid</button>
+                {{form_end(offerForm)}}
+                <li>minimum price: {{auction.minPrice}}€</li>
+                <a href="#">Here is a video to understand the auction</a>
+            </section>
+        </div>
+    </div>
+</main>
+{% endblock %}

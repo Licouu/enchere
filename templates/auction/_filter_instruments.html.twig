@@ -1,0 +1,25 @@
+{{ form_start(form, { 'attr': {'id': 'filters_instrument'} }) }}
+
+    {#{{ form_label(form.instru, 'Instrument') }}#}
+    {{ form_widget(form.instru) }}
+                                    {#
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="guitar">
+                                        <label class="form-check-label" for="guitar">
+                                            Guitar
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="piano">
+                                        <label class="form-check-label" for="piano">
+                                            Piano
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="voices">
+                                        <label class="form-check-label" for="voices">
+                                            Voices
+                                        </label>
+                                    </div>
+                                    <!-- <a href="#">afficher plus</a> -->      #}       
+{{ form_end(form) }}

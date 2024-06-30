@@ -1,0 +1,249 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+{% block head %}
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">-->
+    
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/accueil.css') }}" media="screen">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" />
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" />
+    {% endblock %}
+
+{% endblock %}
+{% block body %}
+{% include "header.html.twig" %}
+        {%if not app.user%}
+            <li><a href="{{path('app_login')}}">{{"Connexion"}}</a></li>
+            <li><a href="{{path('app_register')}}">{{"Inscription"}}</a></li>
+        {% else %}
+
+
+<!-- 2   test eme Partie la photo en arriere plan -->
+<div class="col-12 m-auto" id="tetete">
+    <section id="hero">
+      <div class="hero container">
+        <div>
+        <a href="{{path('app_auctions_list')}}" type="button" class="cta">Explore </a>
+      </div>
+    </div>
+    </section>
+  </div>
+
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-12 m-auto">
+                <div class="owl-carousel owl-theme">
+                    <a href="https://192.168.14.229/instrumenthol/auctions_list?category_form[category][]=Rock&page=1">
+                        <div class="item">
+                            <div class="text-overlay">
+                                <h1>Rock</h1>
+                            </div>   
+                        </div>
+                    </a>
+
+                    <a href="https://192.168.14.229/instrumenthol/auctions_list?category_form[category][]=Rap&page=1">
+                        <div class="item">
+                            <div class="text-overlay">
+                                <h1>Rap</h1>
+                            </div> 
+                        </div>  
+                    </a>
+
+                     <a href="https://192.168.14.229/instrumenthol/auctions_list?category_form[category][]=RNB&page=1"> 
+                        <div class="item">
+                            <div class="text-overlay">
+                                <h1>RnB</h1>
+                            </div>   
+                        </div>
+                     </a>
+
+                    <a href="https://192.168.14.229/instrumenthol/auctions_list?category_form[category][]=Pop&page=1"> 
+                        <div class="item">
+                            <div class="text-overlay">
+                                <h1>Pop</h1>
+                            </div>  
+                        </div>
+                    </a>
+
+                     <a href="https://192.168.14.229/instrumenthol/auctions_list?category_form[category][]=Trap&page=1"> 
+                        <div class="item">
+                            <div class="text-overlay">
+                                <h1>Trap</h1>
+                            </div>   
+                        </div>
+                    </a>
+
+                    <a href="https://192.168.14.229/instrumenthol/auctions_list?category_form[category][]=Electronic&page=1">
+                        <div class="item">
+                            <div class="text-overlay">
+                                <h1>Electronic</h1>
+                            </div>
+                        </div>   
+                    </a>
+
+
+                    <a href="https://192.168.14.229/instrumenthol/auctions_list?category_form[category][]=Funk&page=1">
+                        <div class="item">
+                            <div class="text-overlay">
+                                <h1>Funk</h1>
+                            </div>   
+                        </div>
+                    </a>
+
+                    
+                    <a href="https://192.168.14.229/instrumenthol/auctions_list?category_form[category][]=House&page=1">
+                        <div class="item">
+                            <div class="text-overlay">
+                                <h1>House</h1>
+                            </div>   
+                        </div>
+                    </a>
+
+                    <a href="https://192.168.14.229/instrumenthol/auctions_list?category_form[category][]=Reggaeton&page=1"> 
+                        <div class="item">
+                            <div class="text-overlay">
+                                <h1>Reggaeton</h1>
+                            </div>   
+                        </div>
+                    </a>
+
+                  
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"></script>
+   
+    <!-- JavaScript -->
+    <script src="styles/scripcarrou.js"></script>
+
+
+      <!-- LE SLIDERS DES ENCHERES A PARTIR D'ICI -->
+
+      <div class="AA">
+        <h1>Auctions closing soon !</h1>
+      </div>
+  
+        <!-- Swiper CSS -->
+       <!-- <link rel="stylesheet" href="styles/Accueil.css"> -->
+        <link rel="stylesheet" href="styles/swiper-bundle.min.css">
+
+
+                                        
+        <!-- Swiper JS -->
+       <!-- <section id="encheres"></section> -->
+    <div class="slide-container swiper">
+        <div class="slide-content">
+            <div class="card-wrapper swiper-wrapper">
+                {% for auction in auctions|slice(0, 6) %}
+                    <div class="card swiper-slide">
+                        <div class="flex">
+                            <div class="image-content">
+                                <div class="card-image">
+                                    <img src="{{ asset(auction.beat.imagePath) }}" alt="imageBeat" class="card-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flexx">
+                            <div class="card-content">
+                                <h2 class="name">{{auction.beat.name}}</h2>
+                                <p class="description">@{{auction.beatmaker.username}} </p>
+                                <button class="button btn btn-primary" onclick="location.href='https://192.168.14.229/'+'{{ path('app_offer', {id : auction.id}) }}'" >Participate</button>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="swiper-button-next swiper-navBtn"></div>
+        <div class="swiper-button-prev swiper-navBtn"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+       <!-- Swiper JS a mettre ici -->
+       
+       <script src="/js/swiper-bundle.min.js"></script>
+
+       <!-- JavaScript -->
+       <script src="/js/script.js"></script>
+
+<!-- FIN SLIDERS DES ENCHERES A PARTIR D'ICI -->
+
+<div id="bannum">
+  <h1 id="titrenum">International community <br> of  beatmakers <br> and artists </h1>
+</div>
+
+
+<!-- PARTIE POURQUOI & POURQUOI -->
+
+<div class="valaba" >
+        <div id="a">
+            <h2>Why sell beats on Intrumenthol ?</h2>
+            <ul>
+                
+           <li> It allows them to earn money by making their creations available to users. </li>
+           <li> It gives them a platform to promote their work and reach a wider audience. </li>
+           <li>  Users can easily purchase and download the beats, which makes the process easy and convenient for customers. </li>
+            <li> By having a large number of different beats available, you can attract a larger and more diverse audience.  </li>
+           <li>Sell your beats exclusively on our platform.</li>
+            <li> By using our platform you may earn a higher commission than other beat selling platforms.                                            </li>              
+            <li>Assistance to beatmakers (you can ask us your questions)</li>
+            </ul>
+        </div>
+
+        <div id="aie">
+            <h2> Why buy beats on Instrumenthol ?</h2>
+            <ul>
+                <li>Completely secure professional platform</li>
+                <li>Protection of composers' rights</li>
+                <li>Assistance to beatmakers (you can ask us your questions)</li>
+                <li>Completely secure professional platform</li>
+                <li>Protection of composers' rights</li>
+                <li>Assistance to beatmakers (you can ask us your questions)</li>
+            </ul>
+      </div>
+</div>
+
+
+
+</body>
+ 
+
+
+
+<!--FOOTER à AMÉLIORER & CONTINUER -->
+
+
+<!-- Footer -->
+{% include "footer.html.twig" %}
+<!-- Footer -->
+
+
+
+        {% endif %}
+
+{% endblock %}

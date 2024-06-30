@@ -1,0 +1,24 @@
+{% for auction in auctions %}
+        <div id="tracks">
+            <div>
+                <div id="image">
+                    <div>
+                        <img src="{{ asset(auction.beat.imagePath) }}" alt="beatImage">
+                    </div>
+                    <i class="bi bi-play-circle"></i>
+                </div>                            
+                <article>
+                <h4>{{ auction.beat.name }}</h4>
+                    <section>
+                        <li> @{{ auction.maxPrice }}</li>
+                        {% if auction.nbDaysLeft.format('%D') == '0' %}
+                        <li>Time left: {{ auction.nbDaysLeft.format('%H:%I:%S')}}</li>
+                        {% else %}
+                        <li>Time left: {{ auction.nbDaysLeft.format('%Dj')}}</li>
+                        {% endif %}
+                    </section>
+                </article>
+            </div>
+        </div>
+        <section><h1>The auctions create</h1></section>
+{% endfor %}

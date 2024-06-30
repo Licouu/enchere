@@ -1,0 +1,28 @@
+{{ form_start(form, { 'attr': {'id': 'filters_categories'} }) }}
+    <div class="form-check container-fluid">
+        {#{{ form_label(form.c, 'Category') }}#}
+        {{ form_widget(form.category) }}
+        {#<form class="check">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="reggae">
+                                        <label class="form-check-label" for="reggae">
+                                            Reggae
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="rock">
+                                        <label class="form-check-label" for="rock">
+                                            Rock'n Roll
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="pop">
+                                        <label class="form-check-label" for="pop">
+                                            Pop
+                                        </label>
+                                    </div>
+                                    <!-- <a href="#">afficher plus</a> -->
+                                </form>#}
+        {#{{ form_row(form.category,{label: 'Category: '}) }}#}
+    </div>
+{{ form_end(form) }}

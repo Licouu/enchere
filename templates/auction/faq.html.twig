@@ -1,0 +1,106 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}FAQ{% endblock %}
+{% block head %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/faq.css') }}" media="screen">
+        <link href="{{ asset('https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css')}}" rel='stylesheet'> 
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+{% include "header.html.twig" %}
+    <section>
+    <div class="accordion">
+        <div class="image-box">
+          <img src="/assets/images/faq.png" alt="">
+        </div>
+        <div class="accordion-text">
+          <div class="title">FAQ</div>
+        <ul class="faq-text">
+          <li>
+            <div class="question-arrow">
+              <span class="question">What is the instrumenthol web app ?</span>
+              <i class="bx bxs-chevron-down arrow"></i>
+            </div>
+            <p>
+            This is a web application that allows users to sell and buy instrumental beats using the auction system.
+            </p>
+            <span class="line"></span>
+          </li>
+          <li>
+            <div class="question-arrow">
+              <span class="question"> How does in-app bidding work?</span>
+              <i class="bx bxs-chevron-down arrow"></i>
+            </div>
+            <p>
+             Our auction system is a hidden bidding system with two chances. Users can submit an offer for an instrumental beat. If the user but a price higher than that of the others, he will receive a notification telling them that they are first in the auction. If the user is not the first bidder, they lose a chance but they still have a chance to win the auction by bidding again. The auction ends on a specific date and the user with the highest bid wins the auction.
+            </p>
+            
+            <span class="line"></span>
+          </li>
+          <li>
+            <div class="question-arrow">
+              <span class="question">Who can use the app?</span>
+              <i class="bx bxs-chevron-down arrow"></i>
+            </div>
+            <p>
+            The application is open to all users who are supposed by the purchase or sale of instrumental beats it will be necessary before that to create an account and accept the cgu.
+            </p>
+            <span class="line"></span>
+          </li>
+          <li>
+            <div class="question-arrow">
+              <span class="question">How can I sell my beats on the app?</span>
+              <i class="bx bxs-chevron-down arrow"></i>
+            </div>
+            <p>
+          Users must create an account submit their beats for sale by filling out an online form and sign a contract for the sale of their beats.
+            </p>
+            <span class="line"></span>
+          </li>
+          <li>
+            <div class="question-arrow">
+              <span class="question">Are there any charges to use the app?</span>
+              <i class="bx bxs-chevron-down arrow"></i>
+            </div>
+            <p>
+            There are no commission charges on successful sales. There is no charge for submitting beats for sale or for making offers. We are a completely free application.
+            </p>
+            <span class="line"></span>
+          </li>
+
+            <li>
+            <div class="question-arrow">
+              <span class="question">What file types are accepted for instrumental beats submitted for sale?</span>
+              <i class="bx bxs-chevron-down arrow"></i>
+            </div>
+            <p>The accepted file format is .WAV for better sound quality.
+</p>
+            <span class="line"></span>
+          </li>
+
+            <li>
+            <div class="question-arrow">
+              <span class="question">What happens if a buyer doesn't pay for a beat they won?</span>
+              <i class="bx bxs-chevron-down arrow"></i>
+            </div>
+            <p>
+             Users who fail to meet their purchase obligations will be suspended from the app.
+            </p>
+            <span class="line"></span>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </section>
+    
+{% block script%}
+    <script src="/js/faq.js"></script>
+{% endblock %}
+
+{% include "footer.html.twig" %}
+{% endblock %}
+
+

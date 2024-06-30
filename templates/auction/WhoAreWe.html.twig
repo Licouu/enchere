@@ -1,0 +1,96 @@
+
+
+ {% extends 'base.html.twig' %}
+
+{% block title %}About Us{% endblock %}
+{% block head %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/quisommesnous.css') }}" media="screen">
+    {% endblock %}
+    
+{% endblock %}
+
+{% block body %}
+  {% include "header.html.twig" %}
+<main>
+        <div class="ro">
+            <div class="imgWrapper">
+                <img src="/assets/images/saxophone-entre-mains-homme-espace-copie-fond-sombre_169016-26973.webp" alt="">
+            </div>
+            <div class="contentWrapper">
+                <div class="content">
+                    <h2>About us</h2>
+                    <p>Welcome to our website. We are a group of 6 computer science students passionate about
+                        music and creating beats. We noticed that it was quite difficult to buy beats in competitors, 
+                        that's why we created this beats auction app. We want to provide an easy to use platform for 
+                        beat creators to sell their creations and for buyers to find quality beats at reasonable prices. 
+                        We hope you enjoy using our app and we look forward to helping you find the perfect beat for your 
+                        next music project.</p>  
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <h2>Our team </h2>
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 justify-content-center">
+                <article class="col">
+                        <div id="img">
+                            <img src="/assets/images/unnamed.png" alt="">
+                        </div>
+                        <div id="nom">
+                            <h4>Muhamed Hodzic</h4>
+                            <h5>Director General</h5>
+                        </div>
+                </article>
+                <article class="col">
+                        <div id="img">
+                            <img src="/assets/images/matthew.jpg" alt="">
+                        </div>
+                        <div id="nom">
+                            <h4>Matthew Laisne</h4>
+                            <h5>Lead dev</h5>
+                        </div>
+                </article>
+                <article class="col">
+                        <div id="img">
+                            <img src="/assets/images/paul.png" alt="">
+                        </div>
+                        <div id="nom">
+                            <h4>Paul Matthieu</h4>
+                            <h5>Conception</h5>
+                        </div>
+                </article>
+                <article class="col">
+                        <div id="img">
+                            <img src="/assets/images/EDOUARD.jpg" alt="">
+                        </div>
+                        <div id="nom">
+                            <h4>Edouard Stamboulian</h4>
+                            <h5>System Administrator</h5>
+                        </div>
+                </article>
+                <article class="col">
+                        <div id="img">
+                            <img src="/assets/images/jeans.png" alt="">
+                        </div>
+                        <div id="nom">
+                            <h4>Jean-Emmanuel Audeoud</h4>
+                            <h5>Front-end</h5>
+                        </div>
+                </article>
+                <article class="col">
+                        <div id="img">
+                            <img src="/assets/images/mdj.png" alt="">
+                        </div>
+                        <div id="nom">
+                            <h4>Farès Medjahed</h4>
+                            <h5>Front-end</h5>
+                        </div>
+                </article>
+            </div>
+        </div>
+    </main>
+{% include "footer.html.twig" %}
+{% endblock %}
+
+

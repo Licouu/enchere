@@ -1,0 +1,38 @@
+
+ {% extends 'base.html.twig' %}
+
+{% block title %}Edit Account{% endblock %}
+{% block head %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/edit_compte.css') }}" media="screen">
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+{% include "header.html.twig" %}
+
+<body>
+    <main>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3">
+                <div class="col colo">
+                    {% include "registration/PasswordForm.html.twig" with {form: form_edit_password} only  %}
+                </div>
+                <div class="col colo">
+                    {% include "registration/EmailForm.html.twig" with {form: form_edit_email} only %}
+                </div>
+                <div class="col colo">
+                    {% include "registration/NotifForm.html.twig" with {form: form_edit_notif} only %}
+                </div>
+            </div>
+        </div>
+    </main>
+ </body>
+
+ {% include "footer.html.twig" %}
+ {% endblock %}
+
+
+
+
+

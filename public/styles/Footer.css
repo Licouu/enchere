@@ -1,0 +1,32 @@
+
+/* footer */
+.text-center .text-lg-start .bg-light .text-muted{
+    background-color: #202020;
+    color: white;
+    margin: 0px;
+  }
+
+footer h1, h5 , h6{
+    color: white !important;
+}
+
+.text-center *{
+    color: white !important;
+    background-color: #202020;
+}
+
+footer section{
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+
+
+body{
+  margin: 0;
+  background-color: black;
+}
+
+
+
+
